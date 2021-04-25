@@ -12,7 +12,7 @@ DEFAULT_CSS = bluelog.css
 
 # Compiler and options
 CC = gcc
-CFLAGS += -Wall -O2 $(TARGET)
+CFLAGS += -Wall -Werror -O2 $(TARGET)
 
 # Libraries to link
 LIBS = -lbluetooth -lm

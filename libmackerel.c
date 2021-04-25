@@ -197,7 +197,8 @@ char* mac_get_vendor (char* full_mac)
 	char oui[9] = {0};
 			
 	// Return OUI (also verify)
-	strncpy(oui, mac_get_oui(full_mac), 9);
+	memcpy(oui, mac_get_oui(full_mac), 8);
+        oui[8] = 0;
 	
 	struct stat st;
 	char *str, *map, *off, *end;
