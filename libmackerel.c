@@ -142,6 +142,10 @@ char* mac_get_oui (char* full_mac)
 	
 	// Copy half of full into buffer, return
 	strncpy(half_buffer, full_mac, 8);
+        // as inspired by https://github.com/AndrewMohawk/Bluelog/commit/e5962a3
+        // this is only called by `mac_get_vendor` and the oui text file uses
+        // '-', so force the separator to it.
+        half_buffer[2] = half_buffer[5] = '-';
 	return(half_buffer);
 }
 
